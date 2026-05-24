@@ -1,0 +1,310 @@
+/*STILI PER INDEX E HOME*/
+.home {
+    border: 2px;
+    margin-left: auto;
+    margin-top: 300px;
+    margin-right: auto;
+    font-size: 15px; /* 1. Impedisce al testo di allargarsi all'infinito su schermi grandi */
+    max-width: 500px;
+
+    /* 2. Permette al blocco di stringersi fluidamente sugli schermi piccoli */
+    width: 100%;
+
+    /* Opzionale: distanzia il testo dai bordi dello schermo quando la pagina è piccolissima */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.home h1 {
+    text-align: center;
+    /* Usiamo clamp anche qui: se la pagina si rimpicciolisce (anche in altezza), 
+       il titolo gigante da 70px scende fino a un minimo di 28px per non occupare tutto lo schermo */
+    font-size: clamp(28px, 6vw, 70px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home p {
+    font-size: clamp(10px, 2vw, 15px);
+}
+
+p {
+    margin-top: 0;
+    /* Rimuove lo spazio sopra il paragrafo */
+    margin-bottom: 8px;
+    /* Riduce lo spazio sotto (il default del browser di solito è circa 16px) */
+}
+
+body {
+    margin: 0;
+    padding: -0;
+}
+
+/*-----------------------------------------------------*/
+
+/*STILi DELLA NAVBAR*/
+.navbar {
+    position: -webkit-sticky;
+    /* Supporto per versioni precedenti di Safari */
+    position: sticky;
+    /* Rende la navbar "appiccicosa" */
+    position: fixed;
+    /* Blocca la navbar rispetto allo schermo */
+    top: 0;
+    /* La attacca al bordo superiore */
+    left: 0;
+    /* La attacca al bordo sinistro */
+    width: 100%;
+    /* La fa estendere per tutta la larghezza */
+    height: 60px;
+    /* Imposta un'altezza alla navbar */
+    background-color: #ffffff;
+    z-index: 1000;
+    /* Serve a far sì che la navbar passi SOPRA agli altri elementi */
+    list-style: none;
+    /* Rimuove i pallini neri della lista */
+    margin: 0;
+    /* Rimuove i margini predefiniti */
+    padding: 0;
+    /* Rimuove il rientro predefinito a sinistra */
+
+    display: flex;
+    /* Mette gli elementi uno di fianco all'altro */
+    justify-content: flex-start;
+    /* Allinea tutti gli elementi a SINISTRA */
+    gap: 20px;
+    /* Crea uno spazio uniforme tra un link e l'altro */
+    padding: 15px 20px;
+    /* Spazio interno per non far toccare i bordi dello schermo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    /* !!! Questa è la riga che rimuove la sottolineatura !!! */
+    color: #000000;
+    /* Scegli il colore del testo (es. bianco) */
+    transition: color 0.3s;
+    /* Rende fluido il cambio colore al passaggio del mouse */
+    font-weight: normal;
+    /* Stato normale: testo regolare */
+}
+
+.navbar a:hover {
+    font-weight: bold;
+    /* Diventa in grassetto al passaggio del mouse */
+}
+
+/* Prepara il punto di ancoraggio per il sotto-menu */
+.dropdown {
+    position: relative;
+}
+
+/* 1. NASCONDILMENTO DI DEFAULT E STILE DEL SOTTO-MENU */
+.dropdown-menu {
+    display: none;
+    /* Nasconde il menu di default */
+    position: absolute;
+    /* Lo sgancia dal flusso normale della navbar */
+    top: 100%;
+    /* Lo posiziona esattamente sotto la navbar */
+    left: 0;
+    background-color: #ffffff;
+    /* Stesso colore della navbar per continuità */
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 160px;
+    /* Larghezza minima del rettangolo a tendina */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* Ombra lieve sotto la tendina */
+}
+
+/* Stile dei link interni al sotto-menu */
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    /* Fa sì che il link occupi tutta la riga */
+    white-space: nowrap;
+    /* Evita che il testo vada a capo */
+}
+
+/* 2. LA MAGIA: Fai comparire il menu quando passi il mouse su .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Mostra il menu in cascata */
+}
+
+/* Opzionale: un piccolo dettaglio estetico per la frecciatina */
+.freccia {
+    font-size: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/*STILI PER FSL*/
+.fsl {
+    border: 2px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: auto;
+    font-size: 15px;
+    /* 1. Impedisce al testo di allargarsi all'infinito su schermi grandi */
+    max-width: 1000px;
+
+    /* 2. Permette al blocco di stringersi fluidamente sugli schermi piccoli */
+    width: 100%;
+
+    /* Opzionale: distanzia il testo dai bordi dello schermo quando la pagina è piccolissima */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.immagine-centrata {
+
+    display: block;
+    /* 1. Trasforma l'immagine in un blocco */
+    margin-left: auto;
+    /* 2. Calcola automaticamente lo spazio a sinistra */
+    margin-right: auto;
+    /* 3. Calcola automaticamente lo spazio a destra */
+
+    /* Opzionale: rende l'immagine responsive così non esce dagli schermi piccoli */
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+
+/*STILE PER IL CURRICULUM*/
+/* Stili specifici per la pagina curriculum */
+.curriculum {
+    margin-left: auto;
+    margin-top: 90px;
+    margin-right: auto;
+    margin-bottom: 60px;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.curriculum h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.curriculum .sottotitolo {
+    text-align: center;
+    font-size: clamp(12px, 2vw, 16px);
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Sezioni principali */
+.cv-section {
+    margin-bottom: 36px;
+}
+
+.cv-section-title {
+    font-size: clamp(14px, 2.2vw, 19px);
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Righe info base */
+.cv-info-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 6px 16px;
+    font-size: clamp(12px, 1.8vw, 15px);
+}
+
+.cv-info-grid .label {
+    color: #666;
+}
+
+.cv-info-grid .value {
+    font-weight: 500;
+}
+
+/* Card esperienza / attività */
+.cv-card {
+    border-left: 3px solid #000;
+    padding: 10px 16px;
+    margin-bottom: 14px;
+    background-color: #f9f9f9;
+}
+
+.cv-card .cv-card-title {
+    font-weight: bold;
+    font-size: clamp(13px, 1.9vw, 15px);
+    margin-bottom: 4px;
+}
+
+.cv-card .cv-card-sub {
+    font-size: clamp(11px, 1.6vw, 13px);
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.cv-card .cv-card-desc {
+    font-size: clamp(11px, 1.6vw, 13px);
+    color: #333;
+    margin-top: 6px;
+}
+
+/* Tabella piano di studi */
+.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(10px, 1.5vw, 13px);
+    margin-bottom: 8px;
+}
+
+.cv-table thead tr {
+    background-color: #000;
+    color: #fff;
+}
+
+.cv-table thead th {
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.cv-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.cv-table tbody td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cv-table tfoot tr {
+    background-color: #e8e8e8;
+    font-weight: bold;
+}
+
+.cv-table tfoot td {
+    padding: 7px 10px;
+}
+
+/* Certificazioni */
+.cv-cert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: clamp(12px, 1.7vw, 14px);
+}
