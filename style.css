@@ -2,16 +2,17 @@
 .home {
     border: 2px;
     margin-left: auto;
-    margin-top: 300px;
+    margin-top: 120px;
     margin-right: auto;
     font-size: 15px; /* 1. Impedisce al testo di allargarsi all'infinito su schermi grandi */
     max-width: 500px;
+    margin-bottom: 0 30px;
 
     /* 2. Permette al blocco di stringersi fluidamente sugli schermi piccoli */
     width: 100%;
 
     /* Opzionale: distanzia il testo dai bordi dello schermo quando la pagina è piccolissima */
-    padding: 0 20px;
+    padding: 0 30px;
     box-sizing: border-box;
 }
 
@@ -144,11 +145,36 @@ body {
     vertical-align: middle;
 }
 
+/* ---------------------------------------------------
+   NAVBAR RESPONSIVE – schermi piccoli (telefono verticale)
+   --------------------------------------------------- */
+@media (max-width: 600px) {
+    .navbar {
+        gap: 10px;        /* Riduce lo spazio tra i link */
+        padding: 0 10px;  /* Riduce il padding laterale */
+    }
+
+    .navbar a {
+        font-size: 12px;  /* Rimpicciolisce il testo dei link */
+    }
+}
+
+@media (max-width: 430px) {
+    .navbar a {
+        font-size: 11px;
+    }
+
+    .navbar {
+        gap: 6px;
+        padding: 0 8px;
+    }
+}
+
 /*STILI PER FSL*/
 .fsl {
     border: 2px;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-right: auto;
     font-size: 15px;
     /* 1. Impedisce al testo di allargarsi all'infinito su schermi grandi */
@@ -158,8 +184,9 @@ body {
     width: 100%;
 
     /* Opzionale: distanzia il testo dai bordi dello schermo quando la pagina è piccolissima */
-    padding: 0 20px;
+    padding: 0 40px 40px 40px;
     box-sizing: border-box;
+    margin-bottom: 60px;
 }
 
 .immagine-centrata {
@@ -177,18 +204,16 @@ body {
 
 }
 
-
-
 /*STILE PER IL CURRICULUM*/
 /* Stili specifici per la pagina curriculum */
 .curriculum {
     margin-left: auto;
-    margin-top: 90px;
+    margin-top: 80px;
     margin-right: auto;
     margin-bottom: 60px;
     max-width: 900px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 30px 40px 30px;
     box-sizing: border-box;
     font-size: 15px;
 }
@@ -211,15 +236,6 @@ body {
     margin-bottom: 36px;
 }
 
-.cv-section-title {
-    font-size: clamp(14px, 2.2vw, 19px);
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-    padding-bottom: 6px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
 
 /* Righe info base */
 .cv-info-grid {
@@ -243,24 +259,6 @@ body {
     padding: 10px 16px;
     margin-bottom: 14px;
     background-color: #f9f9f9;
-}
-
-.cv-card .cv-card-title {
-    font-weight: bold;
-    font-size: clamp(13px, 1.9vw, 15px);
-    margin-bottom: 4px;
-}
-
-.cv-card .cv-card-sub {
-    font-size: clamp(11px, 1.6vw, 13px);
-    color: #555;
-    margin-bottom: 4px;
-}
-
-.cv-card .cv-card-desc {
-    font-size: clamp(11px, 1.6vw, 13px);
-    color: #333;
-    margin-top: 6px;
 }
 
 /* Tabella piano di studi */
