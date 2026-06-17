@@ -31,7 +31,7 @@
 
 /* Cornice circolare per la foto */
 .foto-cerchio {
-    width: clamp(140px, 30vw, 220px);
+    width: clamp(190px, 30vw, 150px);
     height: clamp(140px, 30vw, 220px);
     margin: 30px auto 0 auto;     /* centrata orizzontalmente, staccata dal testo */
     border-radius: 50%;           /* rende il contenitore perfettamente rotondo */
